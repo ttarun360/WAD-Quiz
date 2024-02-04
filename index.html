@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <form onsubmit="return formValidation()">
+            <tr>
+                <td>What is the national sport of India</td>
+                <td><input type="text" id="na"></td>
+                <td id="name"></td>
+            </tr>
+            <tr>
+                <td>What is the national language of India</td>
+                <td><input type="text" name="" id="em"></td>
+                <td id="email"></td>
+            </tr>
+            <tr>
+                <td>What is the highest mountain peak in indian subcontinent</td>
+                <td><input type="text" name="" id="pw"></td>
+                <td id="password"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <center><input type="submit" value="Submit"></center>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <p id ="score"></p>
+    <script>
+        function formValidation() {
+
+            var sport = document.getElementById('na').value;
+            var lang = document.getElementById('em').value;
+            var peak = document.getElementById('pw').value;
+            var c=0;
+
+            if (sport=="hockey") {
+                document.getElementById('name').innerHTML = "valid";
+                c+=1;
+            } else {
+                document.getElementById('name').innerHTML= "inValid";
+                
+            }
+
+            if (lang=="hindi") {
+                document.getElementById('email').innerHTML = "valid";
+                c+=1;
+            } else {
+                document.getElementById('email').innerHTML = "invalid";
+            }
+            if (peak=="mount everest") {
+                document.getElementById('password').innerHTML = "valid";
+                c+=1;
+                
+            } else {
+                document.getElementById('password').innerHTML = "inValid";
+                
+            }
+            document.getElementById('score').innerHTML="Score = "+c;
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
